@@ -1,0 +1,29 @@
+DROP DATABASE IF EXISTS `servicesdb`;
+
+CREATE DATABASE `servicesdb`;
+
+USE servicesmanager;
+
+DROP TABLE IF EXISTS Endpoint;
+
+DROP TABLE IF EXISTS Service;
+
+CREATE TABLE Service (
+ ID INT (5) NOT NULL,
+ Name VARCHAR (255) NOT NULL,
+ Description VARCHAR (255) NOT NULL,
+ SpecificationName VARCHAR (255) NOT NULL,
+ SpecificationVersion VARCHAR (255) NOT NULL,
+ PRIMARY KEY ( ID )
+);
+
+CREATE TABLE Endpoint (
+ ID INT (5) NOT NULL,
+ ServiceID INT (5) NOT NULL,
+ URL VARCHAR (255) NOT NULL,
+ CRUDVerb VARCHAR (10) NOT NULL,
+ OAuth2Support BIT(1) NOT NULL DEFAULT 0,
+ OAuth1ASupport BIT(1) NOT NULL DEFAULT 0,
+ PRIMARY KEY ( ID ),
+ FOREIGN KEY (ServiceID) REFERENCES Service(ID)
+);

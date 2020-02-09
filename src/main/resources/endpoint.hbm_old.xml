@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.example.restservice.pojo.Endpoint" table="ENDPOINT">
+        <id name="id" type="int" column="ID">
+            <generator class="assigned"/>
+        </id>
+        <property name="serviceId">
+            <column name="ServiceID"/>
+        </property>
+        <property name="url">
+            <column name="URL"/>
+        </property>
+        <property name="verb">
+            <column name="CRUDVerb"/>
+        </property>
+        <property name="oAuth2Support">
+            <column name="OAuth2Support"/>
+        </property>
+		<property name="oAuth1ASupport">
+            <column name="OAuth1ASupport"/>
+        </property>
+    </class>
+</hibernate-mapping>
