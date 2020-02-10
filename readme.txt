@@ -8,7 +8,7 @@ Alernatively you can alter hibernate.cfg.xml to the user of your choice.
 
 execute generateDB.sql against your MySQL instance
 
-The application will populate tables with demo data on start up
+The application does a check for data and will populate tables with demo data on start up
 
 ----------------------
 2) Project requirements and setup
@@ -24,7 +24,7 @@ You'll need maven installed / in your PATH
 3) Structure
 ----------------------
 
-Controller: We only have one api controller, but it's defined here.
+controller: The one api controller is defined here.
 
 pojo: Our two data entities are defined here.
 
